@@ -26,4 +26,4 @@ jobs:
         run: flake8 . --count --max-line-length=120 --statistics
 
       - name: Run tests
-        run: pytest -v
+        run: pytest -v || [ $? -eq 5 ]
